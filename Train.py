@@ -8,6 +8,7 @@ import Search
 import Evaluator
 
 
+# plays one game of connect 4, using a given player (evaluator)
 def play_game(evaluator):
 
     board = Board.Board()
@@ -26,6 +27,7 @@ def play_game(evaluator):
 
 
 
+# plays a game of Connect 4 and returns the positions after each move and the final score of each player for each positions
 def get_game_data(evaluator):
 
     positions, score = Play.play_game(evaluator)
@@ -37,7 +39,7 @@ def get_game_data(evaluator):
 
 
 
-
+# plays a game, then updates the evaluator's (NN Model) parameters to better predict outcome
 def train_game(evaluator, optimizer: torch.optim.AdamW):
 
     x, y = get_game_data(evaluator)
@@ -53,7 +55,7 @@ def train_game(evaluator, optimizer: torch.optim.AdamW):
 
     return loss.item()
 
-
+# train a Model for a given number of epochs
 def train(evaluator, epochs: int, optimizer: torch.optim.AdamW):
 
     losses = []
