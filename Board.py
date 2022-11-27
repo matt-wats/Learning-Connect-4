@@ -1,6 +1,6 @@
 import torch
 
-
+# input is a list of positions (tensors) with length n, outputs a tensor with a new dim0 of size n
 def stack_positions(positions):
 
     return torch.stack(positions)
@@ -19,6 +19,8 @@ class Board():
             self.board = board
 
     
+    # evaluator is some function (NN Model) that assigns a value to a position
+    # returns evaluation of position
     def evaluate(self, evaluator):
         board = self.get_board().float().view(1, self.channels, self.height, self.width)
         return evaluator(board)
@@ -28,7 +30,7 @@ class Board():
         return self.board.detach().clone()
 
     
-    # returns row index piece can be placed in, or -1 if full
+    # returns list of possible actions that can be made for a given board
     def get_moves(self) -> list:
 
         # [2x6x7] -> [6x7] -> [7]
@@ -42,7 +44,7 @@ class Board():
 
         return moves
 
-    
+    # returns lists of possible moves from a given board and the actions that result from each move
     def get_states(self) -> list:
 
         moves = self.get_moves()
@@ -51,7 +53,8 @@ class Board():
 
         return states, moves
 
-
+    
+    # returns a NEW board after applying a given move
     def apply_move(self, move) -> torch.Tensor:
 
         new_board = Board(self.get_board())
@@ -64,6 +67,7 @@ class Board():
         return new_board
 
 
+    # flips player 1s pieces for player 2s
     def flip_board(self) -> None:
         self.board = self.board.flip((0))
 
