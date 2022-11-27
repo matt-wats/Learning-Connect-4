@@ -7,7 +7,7 @@ import Evaluator
 
 
 
-
+# Monte Carlo Tree Search with a given starting state, evaluator function, and number of search iterations
 def MCTS(state, evaluator, iters):
 
     root = Node(state)
@@ -18,6 +18,7 @@ def MCTS(state, evaluator, iters):
     return root
 
 
+# performs one search of the tree and expands the given leaf node
 def do_search(root, evaluator):
 
     node = root
@@ -34,6 +35,7 @@ def do_search(root, evaluator):
     return None
 
 
+# given a state (root) chooses the child (action + move) that has the best value (exploitation)
 def choose_move(root):
 
     children = root.children
@@ -99,6 +101,7 @@ class Node():
             return child
 
 
+    # chooses the child with the highest value
     def choose_child(self):
         vals = [child.get_val() for child in self.children]
         return self.children[np.argmax(vals)]
