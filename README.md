@@ -6,7 +6,7 @@ It plays a game against itself, then trains the Agent's parameters to better pre
 Loosely based off of, and very much simplified version of, AlphaZero.
 
 
-### Future
+## Future Improvements
 
 We could implement weightings in the loss functions, for the Evaluator to focus more on becoming adept on learning end states, as learning the beginning moves
 are going to be more difficult to accurately learn as their associated value will change drastically throughout training.
