@@ -7,8 +7,8 @@ Loosely based off of, and very much simplified version of, AlphaZero.
 
 ### Previous Project
 
-My goal for this project was to improve upon a previous project of mine: https://openprocessing.org/sketch/911295, which was made in javascript. The methods used are
-very different, but I really was just interested in creating and learning games.
+My goal for this project was to improve upon a previous project of mine: https://openprocessing.org/sketch/911295, which was made in javascript, which used a custom 
+evaluation function in a minimax search. The methods used are very different, but I really was just interested in creating and learning games.
 
 ## Future Improvements
 
