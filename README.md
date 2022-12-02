@@ -5,7 +5,10 @@ It plays a game against itself, then trains the Agent's parameters to better pre
 
 Loosely based off of, and very much simplified version of, AlphaZero.
 
-I also created a simple version of Connect 4 in javascript: https://openprocessing.org/sketch/911295.
+### Previous Project
+
+My goal for this project was to improve upon a previous project of mine: https://openprocessing.org/sketch/820301, which was made in javascript. The methods used are
+very different, but I really was just interested in creating and learning games.
 
 ## Future Improvements
 
