@@ -8,6 +8,9 @@ Loosely based off of, and very much simplified version of, AlphaZero.
 
 ### Future
 
+We could implement weightings in the loss functions, for the Evaluator to focus more on becoming adept on learning end states, as learning the beginning moves
+are going to be more difficult to accurately learn as their associated value will change drastically throughout training.
+
 Each game takes a long time to play, so speeding up this process is very important. We could change the process of finding new moves from a search to having possible 
 moves as a property of a board state, which should drastically improve search times.
 
