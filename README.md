@@ -12,6 +12,10 @@ evaluation function in a minimax search. The methods used are very different, bu
 
 ## Future Improvements
 
+The most imminent improvement to be made is a way to avoid the failure mode: all evaluations collapsing to 0.5 (a tie), rather than trying to actually predict the 
+outcome of the game. We could add more loss weight when the outcome of the game isn't a draw, to make actual predictions more important. It would be interesting 
+to investiate this further and find better solutions.
+
 We could implement weightings in the loss functions, for the Evaluator to focus more on becoming adept on learning end states, as learning the beginning moves
 are going to be more difficult to accurately learn as their associated value will change drastically throughout training.
 
