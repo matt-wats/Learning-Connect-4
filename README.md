@@ -20,5 +20,5 @@ moves as a property of a board state, which should drastically improve search ti
 
 The MCTS will almost every time repeat searching the same board state in different branches, so we could use a graph search instead to prevent this.
 
-Much more difficult idea: We could have the agent play "probabilistic" games, in which each move considered has an assigned probability and thus an assigned outcome,
-which may improve learning speed.
+We could have the agent assign probabilities to each possible action, then have the next move be chosen according to those probabilities, and then train the probability
+predictions to be which is actually chosen (or something similar).
